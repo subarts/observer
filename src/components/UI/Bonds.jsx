@@ -1,5 +1,5 @@
 import React from "react";
-import Bond from "./Bond";
+import BondDescript from "./BondDescript";
 import Filter from "./Filter";
 
 const Bonds = () => {
@@ -8,29 +8,27 @@ const Bonds = () => {
       <h1>Bonds</h1>
       <Filter />
       <div className={"bondsList"}>
-        <Bond />
-        <Bond />
-        <Bond />
-        <Bond />
-        <Bond />
-        <Bond />
-        <Bond />
-        <Bond />
-        <Bond />
-        <Bond />
-        <Bond />
-        <Bond />
-        <Bond />
-        <Bond />
-        <Bond />
-        <Bond />
-        <Bond />
-        <Bond />
-        <Bond />
-        <Bond />
-        <Bond />
-
-        <Bond />
+        <BondDescript />
+        <BondDescript />
+        <BondDescript />
+        <BondDescript />
+        <BondDescript />
+        <BondDescript />
+        <BondDescript />
+        <BondDescript />
+        <BondDescript />
+        <BondDescript />
+        <BondDescript />
+        <BondDescript />
+        <BondDescript />
+        <BondDescript />
+        <BondDescript />
+        <BondDescript />
+        <BondDescript />
+        <BondDescript />
+        <BondDescript />
+        <BondDescript />
+        <BondDescript />
       </div>
     </div>
   );
