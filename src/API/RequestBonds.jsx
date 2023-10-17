@@ -9,7 +9,7 @@ export default class PostServise {
       headers: {
         "Content-Type": "application/json",
         Authorization:
-          "Bearer t.4kDIQbLtHt1ufbZhoW3d7ivHD9kKOFPXzmKXQLxEchyxJhj5JoRRvykSvll1BdYNKG662QXfP-v1PAfzaj1ZsQ",
+          "Bearer ",
       },
       data: { instrumentStatus: "INSTRUMENT_STATUS_UNSPECIFIED" },
     });
