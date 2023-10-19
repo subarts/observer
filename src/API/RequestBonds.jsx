@@ -8,8 +8,7 @@ export default class PostServise {
         "https://invest-public-api.tinkoff.ru/rest/tinkoff.public.invest.api.contract.v1.InstrumentsService/Bonds",
       headers: {
         "Content-Type": "application/json",
-        Authorization:
-          "Bearer t.4kDIQbLtHt1ufbZhoW3d7ivHD9kKOFPXzmKXQLxEchyxJhj5JoRRvykSvll1BdYNKG662QXfP-v1PAfzaj1ZsQ",
+        Authorization: "Bearer ",
       },
       data: { instrumentStatus: "INSTRUMENT_STATUS_UNSPECIFIED" },
     });
