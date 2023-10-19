@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 export default class PostServise {
-  static async getBonds() {
+  static async getBonds(limit = 10, page = 1) {
     const response = await axios({
       method: "post",
       url:
@@ -13,6 +13,6 @@ export default class PostServise {
       },
       data: { instrumentStatus: "INSTRUMENT_STATUS_UNSPECIFIED" },
     });
-    return response.data.instruments;
+    return response;
   }
 }
