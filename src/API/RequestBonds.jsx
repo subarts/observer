@@ -13,5 +13,6 @@ export default class PostServise {
       },
       data: { instrumentStatus: "INSTRUMENT_STATUS_UNSPECIFIED" },
     });
+    return response.data.instruments;
   }
 }
