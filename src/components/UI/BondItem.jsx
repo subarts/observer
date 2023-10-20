@@ -4,11 +4,12 @@ const BondDescript = (props) => {
     <div className={"BondDescript"}>
       <h1>{props.bond.name}</h1>
       <ul>
-        <li>{props.bond.figi}</li>
-        <li>{props.bond.ticker}</li>
-        <li>{props.bond.currency}</li>
-        <li>{props.bond.maturityDate}</li>
-        <li>{props.bond.couponQuantityPerYear}</li>
+        <li>figi:{props.bond.figi}</li>
+        <li>ticker:{props.bond.ticker}</li>
+        <li>currency:{props.bond.currency}</li>
+        <li>maturity date:{props.bond.maturityDate}</li>
+
+        <li>coupon quantity:{props.bond.couponQuantityPerYear}</li>
       </ul>
     </div>
   );

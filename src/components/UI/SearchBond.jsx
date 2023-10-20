@@ -1,14 +1,13 @@
 import React from "react";
-const SerachBond = () => {
+const SearchBond = ({ onChange, value, type }) => {
   return (
-    <div className="searchForm">
-      <form>
+    <div>
+      <form className="searchForm">
         <b>search</b>
-        <input placeholder="" type="text"></input>
+        <input type={type} onChange={onChange} value={value}></input>
       </form>
-      {console.log("search")}
     </div>
   );
 };
 
-export default SerachBond;
+export default SearchBond;

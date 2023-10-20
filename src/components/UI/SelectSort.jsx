@@ -2,6 +2,7 @@ import React from "react";
 const SelectSort = ({ options, defaultValue, value, onChange }) => {
   return (
     <select
+      className="selectSort"
       value={value}
       onChange={(event) => {
         onChange(event.target.value);

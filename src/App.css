@@ -27,7 +27,7 @@
   gap: 55px;
   justify-content: space-around;
 }
-.filter{
+.selectSort{
   display: flex;
   height: 2em;
   align-items: center;
@@ -85,7 +85,14 @@ background-color: red;
 ul{
   list-style-type: none;
 }
-.serachForm{
-
-
+.searchForm{
+  background-color: darkseagreen;
+  display: flex;
+  width: 16rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 0.5rem;
+  gap: 2px;
 }
+
