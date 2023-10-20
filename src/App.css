@@ -31,7 +31,10 @@
   display: flex;
   height: 2em;
   align-items: center;
-
+  background-color: grey;
+  justify-content: space-evenly;
+  width: 209px;
+  border-radius: 0.5rem;
 }
 .someInformation{
   display: flex;
@@ -63,21 +66,26 @@ background-color: red;
   display: none;
 }
 .ButtonBonds{
-  width: 100px;
-  height: 50px;
-  border-radius: 10px;
-  transition: 2s;
+  height: 2rem;
+  width: 7rem;
+  border: 0px;
+  background-color: darkseagreen;
+  border-radius: 0.5rem;
 }
 .ButtonBonds:hover{
-  background-color:chartreuse;
+  background-color:grey;
   transition: 3s;
 
 }
 .buttonGetBond:hover{
-  background-color:white;
+  background-color: grey;
   transition: 3s;
 }
 
 ul{
   list-style-type: none;
+}
+.serachForm{
+
+
 }

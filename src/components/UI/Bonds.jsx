@@ -3,28 +3,42 @@ import BondItem from "./BondItem";
 import Filter from "./Filter";
 import PostServise from "../../API/RequestBonds";
 import ButtonGetBonds from "./ButtonGetBonds";
-import { useNavigate } from "react-router-dom";
-import BondWindow from "./BondWindow";
+import SearchBond from "./SearchBond";
+import SelectSort from "./SelectSort";
 
 const Bonds = () => {
-  const router = useNavigate();
-  const [bonds, setPosts] = useState([]);
-
+  const [bonds, setBonds] = useState([]);
+  const [selectedSort, setSelectedSort] = useState("");
+  const sortBonds = (sort) => {
+    setSelectedSort(sort);
+    console.log(bonds[0]);
+    setBonds([...bonds].sort((a, b) => a[sort].localeCompare(b[sort])));
+  };
   async function fetchBonds() {
     const response = await PostServise.getBonds();
-    setPosts(response.data.instruments);
+    setBonds(response.data.instruments);
   }
   useEffect(() => {
     fetchBonds();
   }, []);
 
-  console.log(bonds);
-
   return (
     <div className={"bonds"}>
       <h1>Bonds</h1>
-      <ButtonGetBonds className={"ButtonBonds"} onClick={fetchBonds} />
+      <ButtonGetBonds onClick={fetchBonds} />
       <Filter />
+      <SelectSort
+        value={selectedSort}
+        onChange={sortBonds}
+        defaultValue="sorts"
+        options={[
+          { value: "name", name: "sort by name" },
+          { value: "figi", name: "sort by figi" },
+          { value: "ticker", name: "sort by ticker" },
+          { value: "maturityDate", name: "sort by date" },
+        ]}
+      />
+      <SearchBond />
       <div className={"bondsList"}>
         {bonds.map((bond) => (
           <div
@@ -35,7 +49,6 @@ const Bonds = () => {
           </div>
         ))}
       </div>
-      <BondWindow />
     </div>
   );
 };
