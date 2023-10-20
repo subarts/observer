@@ -21,7 +21,12 @@ const Bonds = () => {
     return bonds;
   }, [selectedSort, bonds]);
   const sortedAndSearchBond = useMemo(() => {
-    return sortedBonds.filter((bond) => bond.figi.includes(searchQuery));
+    return sortedBonds.filter(
+      (bond) =>
+        bond.figi.toLowerCase().includes(searchQuery) ||
+        bond.ticker.toLowerCase().includes(searchQuery) ||
+        bond.name.toLowerCase().includes(searchQuery)
+    );
   }, [searchQuery, sortedBonds]);
   const sortBonds = (sort) => {
     setSelectedSort(sort);
