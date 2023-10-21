@@ -4,16 +4,14 @@ import PostServise from "../../API/RestRequest";
 import ButtonGetBonds from "./ButtonGetBonds";
 import SearchBond from "./SearchBond";
 import SelectSort from "./SelectSort";
+import BondsList from "./BondsList";
 
 const Bonds = () => {
   const [bonds, setBonds] = useState([]);
   const [selectedSort, setSelectedSort] = useState("");
-
   const [searchQuery, setSearchQuery] = useState("");
-
   const sortedBonds = useMemo(() => {
     if (selectedSort) {
-      console.log("work");
       return [...bonds].sort((a, b) =>
         a[selectedSort].localeCompare(b[selectedSort])
       );
@@ -42,9 +40,7 @@ const Bonds = () => {
   return (
     <div className={"bonds"}>
       <h1>Bonds</h1>
-      <ButtonGetBonds onClick={fetchBonds} />
-      {/*    <SearchBond value={searchQuery} onChange={(e) => e.target.value} /> */}
-      <div>
+      <div className="searchSort">
         <SearchBond
           value={searchQuery}
           type="text"
@@ -64,6 +60,7 @@ const Bonds = () => {
         />
       </div>
       <div className={"bondsList"}>
+        {/* <BondsList/> refactor after migration to redux */}
         {sortedAndSearchBond.map((bond) => (
           <div className="buttonGetBond">
             <BondItem bond={bond} key={bond.figi} />

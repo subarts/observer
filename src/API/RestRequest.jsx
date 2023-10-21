@@ -6,6 +6,7 @@ export default class PostServise {
       method: "post",
       url:
         "https://invest-public-api.tinkoff.ru/rest/tinkoff.public.invest.api.contract.v1.InstrumentsService/Bonds",
+
       headers: {
         "Content-Type": "application/json",
         Authorization:
