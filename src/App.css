@@ -53,7 +53,7 @@ border-radius: 50%;
 background-color: red;
 
 }
-.buttonGetBond{
+.bondItem{
   border-radius: 20px;
   background-color: darkseagreen;
   transition: 3s;
@@ -79,7 +79,7 @@ background-color: red;
   transition: 3s;
 
 }
-.buttonGetBond:hover{
+.bondItem:hover{
   background-color: grey;
   transition: 3s;
 }

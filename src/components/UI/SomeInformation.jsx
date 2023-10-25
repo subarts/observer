@@ -4,7 +4,7 @@ const SomeInformation = () => {
     <div className={"someInformation"}>
       <h3>Some Information</h3>
 
-      <div className={"lampConnect"}></div>
+      {/*    <div className={"lampConnect"}></div> */}
     </div>
   );
 };

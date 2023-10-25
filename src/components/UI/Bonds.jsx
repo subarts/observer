@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useMemo } from "react";
 import BondItem from "./BondItem";
-import PostServise from "../../API/RestRequest";
-import ButtonGetBonds from "./ButtonGetBonds";
+import GetBonds from "../../API/RestRequest";
 import SearchBond from "./SearchBond";
 import SelectSort from "./SelectSort";
-import BondsList from "./BondsList";
 
 const Bonds = () => {
   const [bonds, setBonds] = useState([]);
@@ -30,7 +28,7 @@ const Bonds = () => {
     setSelectedSort(sort);
   };
   async function fetchBonds() {
-    const response = await PostServise.getBonds();
+    const response = await GetBonds();
     setBonds(response.data.instruments);
   }
   useEffect(() => {
@@ -62,7 +60,7 @@ const Bonds = () => {
       <div className={"bondsList"}>
         {/* <BondsList/> refactor after migration to redux */}
         {sortedAndSearchBond.map((bond) => (
-          <div className="buttonGetBond">
+          <div className="bondItem">
             <BondItem bond={bond} key={bond.figi} />
           </div>
         ))}
