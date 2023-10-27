@@ -1,8 +1,6 @@
 
     import {combineReducers, configureStore} from '@reduxjs/toolkit';
-
-import {increment,decrement} from "./ReduserTest"
-    import   reduserTest from "./ReduserTest"
+    import   reduserTest from "./Reducers"
 
 const rootReduser=combineReducers({
     toolKit:reduserTest

@@ -1,11 +1,12 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import BondItem from "./BondItem";
-import GetBonds from "../../API/RestRequest";
 import SearchBond from "./SearchBond";
 import SelectSort from "./SelectSort";
-
+import store from "../../store/index";
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import { addBonds } from "../../store/Reducers";
 const Bonds = () => {
-  const [bonds, setBonds] = useState([]);
+  const bonds = useSelector((state) => state.rootReduser.toolKit.bonds);
   const [selectedSort, setSelectedSort] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   const sortedBonds = useMemo(() => {
@@ -27,17 +28,15 @@ const Bonds = () => {
   const sortBonds = (sort) => {
     setSelectedSort(sort);
   };
-  async function fetchBonds() {
-    const response = await GetBonds();
-    setBonds(response.data.instruments);
-  }
-  useEffect(() => {
-    fetchBonds();
-  }, []);
-
+  const bondsRequest = () => {
+    store.dispatch(addBonds());
+  };
   return (
     <div className={"bonds"}>
       <h1>Bonds</h1>
+      <button onClick={bondsRequest} className="ButtonBonds">
+        get bonds
+      </button>
       <div className="searchSort">
         <SearchBond
           value={searchQuery}
@@ -68,4 +67,5 @@ const Bonds = () => {
     </div>
   );
 };
+
 export default Bonds;
