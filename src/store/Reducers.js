@@ -1,26 +1,30 @@
 import { createAction, createReducer } from "@reduxjs/toolkit";
-import GetBonds from "../API/RestRequest";
 
 
 
-let arr=[]
-async function fetchBonds() {
-  const response = await GetBonds();
-   return arr=response.data.instruments}
-const inicialState={
-  bonds:[]
+   const initialState={
+  bonds:["one"],
+  searchQuery: "searchQuery "
 }
 export const addBonds=createAction("ADDBONDS")
-fetchBonds()
-export default createReducer(inicialState,{
-      [addBonds]: function(state){
-       state.bonds=arr
-        } 
+export const searchBonds=createAction("SEARCHBONDS")
+
+export default createReducer(initialState,{
+       [addBonds]: function(state,action){
+        state.bonds=[...state.bonds,...action.payload.bonds]
+        console.log("working!",[...state.bonds])
+    
         
+   
+        } , 
+      [searchBonds]:  function(state){
+       console.log(state.searchQuery)
+       }
+    
        
       
       
 
-      
-      
+
 })
+

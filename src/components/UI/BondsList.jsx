@@ -1,9 +1,6 @@
-import React from "react";
+import React, { useMemo } from "react";
+import BondItem from "./BondItem";
 const BondsList = () => {
-  return (
-    <div className={"bondsList"}>
-      {/* <BondsList/> refactor after migration to redux */}
-    </div>
-  );
+  return <div className={"bondsList"}></div>;
 };
 export default BondsList;

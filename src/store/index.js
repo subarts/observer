@@ -1,9 +1,9 @@
 
     import {combineReducers, configureStore} from '@reduxjs/toolkit';
-    import   reduserTest from "./Reducers"
+    import   reducerTest from "./Reducers"
 
 const rootReduser=combineReducers({
-    toolKit:reduserTest
+    toolKit:reducerTest
 })
     const store = configureStore({
         reducer: {rootReduser

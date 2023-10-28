@@ -17,4 +17,9 @@ const GetBonds = async function getBonds() {
 
   return response;
 };
+/* async function fetchBonds() {
+  const response = await GetBonds();
+  arrayBonds = response.data.instruments;
+  return arrayBonds;
+} */
 export default GetBonds;
