@@ -4,9 +4,10 @@ import SearchBond from "./SearchBond";
 import SelectSort from "./SelectSort";
 import store from "../../store/index";
 import { useSelector } from "react-redux/es/hooks/useSelector";
-import { addBonds, searchBonds } from "../../store/Reducers";
+import { addBonds, searchBonds, storeadd } from "../../store/Reducers";
 import BondsList from "./BondsList";
 import GetBonds from "../../API/RestRequest";
+import { bondsAdd } from "../../store/actionCreators";
 const Bonds = () => {
   let arrayBonds = [];
   fetchBonds();
@@ -15,9 +16,8 @@ const Bonds = () => {
     return (arrayBonds = [...response.data.instruments]);
   }
 
-  const bonds = useSelector((state) => state.rootReduser.toolKit.bonds);
   const bondsRequest = () => {
-    store.dispatch(addBonds({ bonds: [...arrayBonds] }));
+    store.dispatch(bondsAdd(arrayBonds));
   };
 
   /*    const sortedAndSearchBond = useSelector(
@@ -26,7 +26,10 @@ const Bonds = () => {
   /*   const search = () => {
     store.dispatch(addBonds({ searchQuery: "" }));
   }; */
-
+  /*   const searchQuery = useSelector(
+    (state) => state.rootReduser.toolKit.searchQuerys
+  );
+  */
   //up the redux
 
   /*   const [selectedSort, setSelectedSort] = useState("");
@@ -53,21 +56,16 @@ const Bonds = () => {
 
   return (
     <div className={"bonds"}>
-      <button onClick={bondsRequest} className="ButtonBonds">
-        get bonds
-      </button>
       <h1>Bonds</h1>
-      {/* 
       <button onClick={bondsRequest} className="ButtonBonds">
         get bonds
       </button>
-      <div className="searchSort">
-        <SearchBond
-          value={searchQuery}
-          type="text"
-          onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="search"
-        />
+
+      <SearchBond />
+
+      <BondsList />
+      {/* 
+      
         <SelectSort
           className={"filter"}
           value={selectedSort}

@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux/es/hooks/useSelector";
-const SearchBond = ({ onChange, value, type }) => {
+import store from "../../store";
+import { searchBond } from "../../store/actionCreators";
+const SearchBond = () => {
+  const searchQuery = useSelector(
+    (state) => state.rootReduser.toolKit.searchQuerys
+  );
+
+  const search = (value) => {
+    store.dispatch(searchBond(value));
+  };
+
   return (
-    <div>
+    <div className="searchSort">
       <form className="searchForm">
         <b>search</b>
-        <input type={type} onChange={onChange} value={value}></input>
+        <input
+          value={searchQuery}
+          onChange={(e) => search(e.target.value)}
+          placeholder="start"
+        ></input>
       </form>
     </div>
   );
