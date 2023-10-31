@@ -18,7 +18,7 @@ const SearchBond = () => {
         <input
           value={searchQuery}
           onChange={(e) => search(e.target.value)}
-          placeholder="start"
+          placeholder="search"
         ></input>
       </form>
     </div>

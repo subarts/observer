@@ -1,20 +1,28 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import BondItem from "./BondItem";
+import SelectSort from "./SelectSort";
 const BondsList = () => {
   const bonds = useSelector((state) => state.rootReduser.toolKit.bonds);
+  const searchQuery = useSelector(
+    (state) => state.rootReduser.toolKit.searchQuerys
+  );
 
+  const sortedAndSearchBond = useMemo(() => {
+    return bonds.filter(
+      (bond) =>
+        bond.figi.toLowerCase().includes(searchQuery) ||
+        bond.ticker.toLowerCase().includes(searchQuery) ||
+        bond.name.toLowerCase().includes(searchQuery)
+    );
+  }, [searchQuery, bonds]);
   return (
     <div className={"bondsList"}>
-      {bonds.length < 1 ? (
-        <div>{bonds}</div>
-      ) : (
-        bonds.map((bond) => (
-          <div className="bondItem">
-            <BondItem bond={bond} key={bond.figi} />
-          </div>
-        ))
-      )}
+      {sortedAndSearchBond.map((bond) => (
+        <div className="bondItem">
+          <BondItem bond={bond} key={bond.figi} />
+        </div>
+      ))}
     </div>
   );
 };

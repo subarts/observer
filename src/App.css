@@ -57,7 +57,8 @@ background-color: red;
   border-radius: 20px;
   background-color: darkseagreen;
   transition: 3s;
-  height: max-content;
+  box-sizing: border-box;
+  padding: 2rem;
 }
 .bondInform{
   background-color: aqua;
@@ -103,5 +104,8 @@ ul{
   flex-direction: column;
   gap: 1rem;
   align-items: self-start;
+}
+input:focus-visible {
+  outline-offset: -1rem;
 }
 

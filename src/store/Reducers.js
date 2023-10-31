@@ -9,8 +9,14 @@ import { createAction, createReducer } from "@reduxjs/toolkit";
           currency: "currency",
           maturityDate: "maturity date",
           couponQuantity:"coupon quantity",
+},{ name: "123",
+figi: "asd",
+ticker: "dsa",
+currency: "sd",
+maturityDate: "matsadsadaurity date",
+couponQuantity:"cas",
 }],
-searchQuerys:"seacrh"
+  searchQuerys:""
 }
 export const addBonds=createAction("ADDBONDS")
 export const searchBonds=createAction("SEARCHBONDS")
@@ -24,14 +30,7 @@ export default createReducer(initialState,{
         } , 
       [searchBonds]: function(state,action){
         state.searchQuerys=action.searchQuerys
-        console.log(state.searchQuerys)
-     
-        //state.searchQuerys==initialState.searchQuerys:state.searchQuerys=action.searchQuerys
-     
-        
-       
-
-      }
+      },
        
       
       
