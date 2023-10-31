@@ -59,6 +59,7 @@ background-color: red;
   transition: 3s;
   box-sizing: border-box;
   padding: 2rem;
+  height: max-content;
 }
 .bondInform{
   background-color: aqua;

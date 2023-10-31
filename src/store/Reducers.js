@@ -1,40 +1,42 @@
 import { createAction, createReducer } from "@reduxjs/toolkit";
 
-
-
    const initialState={
-  bonds:[{ name: "name",
+        bonds:[{ name: "name",
           figi: "figi",
           ticker: "ticker",
           currency: "currency",
           maturityDate: "maturity date",
           couponQuantity:"coupon quantity",
-},{ name: "123",
-figi: "asd",
-ticker: "dsa",
-currency: "sd",
-maturityDate: "matsadsadaurity date",
-couponQuantity:"cas",
 }],
-  searchQuerys:""
+  searchQuerys:"",
+  selectSort:"sort by"
 }
+// actions
 export const addBonds=createAction("ADDBONDS")
 export const searchBonds=createAction("SEARCHBONDS")
-//up actions
+export const selectedSort=createAction("SELECTEDSORT")
 
 
-//down reducers
+
+// reducers
 export default createReducer(initialState,{
        [addBonds]: function(state,action){
+       
         state.bonds=[...action.payload.bonds]
         } , 
       [searchBonds]: function(state,action){
-        state.searchQuerys=action.searchQuerys
+        state.searchQuerys=action.searchQuerys 
       },
-       
+       [selectedSort]: function(state,action){
+        state.bonds.sort((a,b) => {
+          return a[action.selectSort].localeCompare(b[action.selectSort])
+        
+        }) 
+     
       
+      }
       
-
+  
 
 })
 

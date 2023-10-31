@@ -1,7 +1,6 @@
 import React, { useMemo } from "react";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import BondItem from "./BondItem";
-import SelectSort from "./SelectSort";
 const BondsList = () => {
   const bonds = useSelector((state) => state.rootReduser.toolKit.bonds);
   const searchQuery = useSelector(
@@ -16,6 +15,9 @@ const BondsList = () => {
         bond.name.toLowerCase().includes(searchQuery)
     );
   }, [searchQuery, bonds]);
+
+  /*  store.dispatch(bondsAdd(arrayBonds)); */
+
   return (
     <div className={"bondsList"}>
       {sortedAndSearchBond.map((bond) => (
