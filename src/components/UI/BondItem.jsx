@@ -6,10 +6,6 @@ const BondDescript = (props) => {
       <ul>
         <li>figi:{props.bond.figi}</li>
         <li>ticker:{props.bond.ticker}</li>
-        <li>currency:{props.bond.currency}</li>
-        <li>maturity date:{props.bond.maturityDate}</li>
-
-        <li>coupon quantity:{props.bond.couponQuantityPerYear}</li>
       </ul>
     </div>
   );

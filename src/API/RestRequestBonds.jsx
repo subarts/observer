@@ -17,9 +17,7 @@ const GetBonds = async function getBonds() {
 
   return response;
 };
-/* async function fetchBonds() {
-  const response = await GetBonds();
-  arrayBonds = response.data.instruments;
-  return arrayBonds;
-} */
+
+//link https://www.tinkoff.ru/invest/bonds/RU000A101UW4?utm_source=security_share for moblie
+// link  url: "https://www.tinkoff.ru/invest/bonds/RU000A103Q08/" for PC
 export default GetBonds;
