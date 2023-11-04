@@ -1,3 +1,4 @@
+"use client"
 import React from "react"
 import SearchBond from "./SearchBond"
 import SelectSort from "./SelectSort"
@@ -5,7 +6,8 @@ import { dispatch } from "../../store/dispatch"
 import BondsList from "./BondsList"
 import GetBonds from "../../API/RestRequestBonds"
 import { bondsAdd } from "../../store/actionCreators"
-const Bonds = () => {
+
+const BondsCatalog = () => {
   let arrayBonds = []
   fetchBonds()
   async function fetchBonds() {
@@ -31,4 +33,4 @@ const Bonds = () => {
   )
 }
 
-export default Bonds
+export default BondsCatalog

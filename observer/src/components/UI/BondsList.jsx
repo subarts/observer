@@ -1,29 +1,29 @@
-import React, { useMemo } from "react";
-import { useSelector } from "react-redux/es/hooks/useSelector";
-import BondItem from "./BondItem";
-import { selectNext, selectPrev } from "../../store/Reducers";
-import { dispatch } from "../../store/dispatch";
+import React, { useMemo } from "react"
+import { useSelector } from "react-redux"
+import BondItem from "./BondItem"
+import { selectNext, selectPrev } from "../../store/Reducers"
+import { dispatch } from "../../store/dispatch"
 const BondsList = () => {
-  const bonds = useSelector((state) => state.rootReduser.toolKit.bonds);
+  const bonds = useSelector((state) => state.rootReduser.toolKit.bonds)
   const searchQuery = useSelector(
     (state) => state.rootReduser.toolKit.searchQuerys
-  );
-  const count = useSelector((state) => state.rootReduser.toolKit.count);
+  )
+  const count = useSelector((state) => state.rootReduser.toolKit.count)
   const sortedAndSearchBond = useMemo(() => {
     return bonds.filter(
       (bond) =>
         bond.figi.toLowerCase().includes(searchQuery) ||
         bond.ticker.toLowerCase().includes(searchQuery) ||
         bond.name.toLowerCase().includes(searchQuery)
-    );
-  }, [searchQuery, bonds]);
+    )
+  }, [searchQuery, bonds])
 
   const counterAdd = () => {
-    dispatch(selectNext());
-  };
+    dispatch(selectNext())
+  }
   const counterDel = () => {
-    dispatch(selectPrev());
-  };
+    dispatch(selectPrev())
+  }
   return (
     <>
       <button onClick={counterDel}>get prev bonds</button>
@@ -42,6 +42,6 @@ const BondsList = () => {
         {console.log(count)}
       </div>
     </>
-  );
-};
-export default BondsList;
+  )
+}
+export default BondsList

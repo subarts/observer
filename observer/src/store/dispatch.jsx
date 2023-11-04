@@ -1,4 +1,4 @@
-import store from ".";
+import store from "."
 export const dispatch = (value) => {
-  store.dispatch(value);
-};
+  store.dispatch(value)
+}

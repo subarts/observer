@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
-import { useSelector } from "react-redux/es/hooks/useSelector";
-import store from "../../store";
-import { searchBond } from "../../store/actionCreators";
+import React, { useEffect } from "react"
+import { useSelector } from "react-redux/es/hooks/useSelector"
+import store from "../../store"
+import { searchBond } from "../../store/actionCreators"
 const SearchBond = () => {
   const searchQuery = useSelector(
     (state) => state.rootReduser.toolKit.searchQuerys
-  );
+  )
 
   const search = (value) => {
-    store.dispatch(searchBond(value));
-  };
+    store.dispatch(searchBond(value))
+  }
 
   return (
     <div className="searchSort">
@@ -22,7 +22,7 @@ const SearchBond = () => {
         ></input>
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default SearchBond;
+export default SearchBond
