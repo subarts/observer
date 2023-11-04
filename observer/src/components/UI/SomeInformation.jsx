@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react"
 const SomeInformation = () => {
   return (
     <div className={"someInformation"}>
@@ -6,6 +6,6 @@ const SomeInformation = () => {
 
       {/*    <div className={"lampConnect"}></div> */}
     </div>
-  );
-};
-export default SomeInformation;
+  )
+}
+export default SomeInformation
