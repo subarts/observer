@@ -1,6 +1,6 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { useSelector } from "react-redux/es/hooks/useSelector"
-import store from "../../store"
+import store from "../../store/index"
 import { searchBond } from "../../store/actionCreators"
 const SearchBond = () => {
   const searchQuery = useSelector(
@@ -13,7 +13,7 @@ const SearchBond = () => {
 
   return (
     <div className="searchSort">
-      <form className="searchForm">
+      <form className="searchForm" name="form">
         <b>search</b>
         <input
           value={searchQuery}

@@ -1,13 +1,20 @@
-import React, { useMemo } from "react"
+"use client"
+import React, { useEffect, useMemo } from "react"
 import { useSelector } from "react-redux"
 import BondItem from "./BondItem"
-import { selectNext, selectPrev } from "../../store/Reducers"
 import { dispatch } from "../../store/dispatch"
+import { selectNext, selectPrev } from "../../store/Reducers"
+import SwitcherNumbItems from "../UI/SwitchNumbItems"
 const BondsList = () => {
   const bonds = useSelector((state) => state.rootReduser.toolKit.bonds)
+
   const searchQuery = useSelector(
     (state) => state.rootReduser.toolKit.searchQuerys
   )
+
+  /*   const selectNumbItems = useSelector(
+    (state) => state.rootReduser.toolKit.selectNumbItems
+  ) */
   const count = useSelector((state) => state.rootReduser.toolKit.count)
   const sortedAndSearchBond = useMemo(() => {
     return bonds.filter(
@@ -24,22 +31,31 @@ const BondsList = () => {
   const counterDel = () => {
     dispatch(selectPrev())
   }
+
   return (
     <>
-      <button onClick={counterDel}>get prev bonds</button>
-      <button onClick={counterAdd}>get next bonds</button>
+      <div className="switchPage">
+        <button onClick={counterDel} className="ButtonList">
+          get prev bonds
+        </button>
+
+        {/* <SwitcherNumbItems /> */}
+
+        <button onClick={counterAdd} className="ButtonList">
+          get next bonds
+        </button>
+      </div>
       <div className={"bondsList"}>
         {sortedAndSearchBond
           .slice(
             count,
-            count + 10
+            count + 5
           ) /* обавить какое количество облиг выводить на странице */
           .map((bond) => (
             <div className="bondItem">
               <BondItem bond={bond} key={bond.figi} />
             </div>
           ))}
-        {console.log(count)}
       </div>
     </>
   )

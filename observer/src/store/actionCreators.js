@@ -8,4 +8,7 @@ export function searchBond(value) {
 export function selectedSort(value) {
   return { type: "SELECTEDSORT",selectSort: value  }
 };
+export function SwitcherNumbItems(value) {
+  return { type: "SELECTNUMBITEMS",numberItems: value  }
+}
 
