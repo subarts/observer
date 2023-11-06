@@ -5,6 +5,7 @@ import BondItem from "./BondItem"
 import { dispatch } from "../../store/dispatch"
 import { selectNext, selectPrev } from "../../store/Reducers"
 import SwitcherNumbItems from "../UI/SwitchNumbItems"
+import Link from "next/link"
 const BondsList = () => {
   const bonds = useSelector((state) => state.rootReduser.toolKit.bonds)
 
@@ -52,9 +53,11 @@ const BondsList = () => {
             count + 8
           ) /* обавить какое количество облиг выводить на странице */
           .map((bond) => (
-            <div className="bondItem">
-              <BondItem bond={bond} key={bond.figi} />
-            </div>
+            <Link href={`/bonds/${bond.figi}`}>
+              <div className="bondItem">
+                <BondItem bond={bond} key={bond.name} />
+              </div>
+            </Link>
           ))}
       </div>
     </>
