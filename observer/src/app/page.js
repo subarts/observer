@@ -6,7 +6,7 @@ export default function home() {
    
    <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <Link href={"./bonds"}><button>onclick</button></Link>
-     
+      <Link href={"./bond"}><button>onclick</button></Link>
     </main>
   )
 }

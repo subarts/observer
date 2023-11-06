@@ -49,7 +49,7 @@ const BondsList = () => {
         {sortedAndSearchBond
           .slice(
             count,
-            count + 5
+            count + 8
           ) /* обавить какое количество облиг выводить на странице */
           .map((bond) => (
             <div className="bondItem">
