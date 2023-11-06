@@ -2,20 +2,24 @@ import React from "react"
 import SomeInformation from "../../../components/UI/SomeInformation"
 import Image from "next/image"
 import BondPanel from "../../../components/UI/BondPanel"
-export default function BondWindow({ params: { slug: string } }) {
+/* import BondDescript from "../../components/UI/BondItem" */
+import { useSelector } from "react-redux/es/hooks/useSelector"
+import AboutBond from "../../../components/UI/AboutBond"
+export default function BondWindow({ params }) {
   return (
     <div /*  className="bondInform" */>
       <SomeInformation />
       <BondPanel />
-      <aside>information about bond</aside>
-
-      <Image
-        src="/image_2023-11-06_10-24-02.png"
-        priority={true}
-        width={1000}
-        height={1000}
-        alt="Picture of the author"
-      />
+      <div className="bondGraph">
+        <AboutBond {...params} />
+        <Image
+          src="/image_2023-11-06_10-24-02.png"
+          priority={true}
+          width={1000}
+          height={1000}
+          alt="Picture of the author"
+        />
+      </div>
     </div>
   )
 }

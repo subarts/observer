@@ -7,10 +7,8 @@ import { Provider } from "react-redux"
 export default function Bonds() {
   return (
     <>
-      <Provider store={store}>
-        <SomeInformation />
-        <BondsCatalog />
-      </Provider>
+      <SomeInformation />
+      <BondsCatalog />
     </>
   )
 }

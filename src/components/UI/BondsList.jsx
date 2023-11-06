@@ -13,9 +13,6 @@ const BondsList = () => {
     (state) => state.rootReduser.toolKit.searchQuerys
   )
 
-  /*   const selectNumbItems = useSelector(
-    (state) => state.rootReduser.toolKit.selectNumbItems
-  ) */
   const count = useSelector((state) => state.rootReduser.toolKit.count)
   const sortedAndSearchBond = useMemo(() => {
     return bonds.filter(
@@ -53,11 +50,11 @@ const BondsList = () => {
             count + 8
           ) /* обавить какое количество облиг выводить на странице */
           .map((bond) => (
-            <Link href={`/bonds/${bond.figi}`}>
-              <div className="bondItem">
-                <BondItem bond={bond} key={bond.name} />
-              </div>
-            </Link>
+            <div className="bondItem">
+              <Link href={`/bonds/${bond.figi}`}>
+                <BondItem bond={bond} key={bond.figi} />
+              </Link>
+            </div>
           ))}
       </div>
     </>
