@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 const BondDescript = (props) => {
   return (
     <div className={"BondDescript"}>
@@ -8,6 +8,6 @@ const BondDescript = (props) => {
         <li>ticker:{props.bond.ticker}</li>
       </ul>
     </div>
-  );
-};
-export default BondDescript;
+  )
+}
+export default BondDescript

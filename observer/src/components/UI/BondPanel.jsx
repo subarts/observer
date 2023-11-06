@@ -1,7 +1,7 @@
 import React from "react"
 const BondPanel = () => {
   return (
-    <ul>
+    <ul className="bondPanel">
       <li>Review</li>
       <li>Coupons</li>
       <li>Events</li>
