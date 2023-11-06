@@ -7,7 +7,7 @@ import { useSelector } from "react-redux/es/hooks/useSelector"
 import AboutBond from "../../../components/UI/AboutBond"
 export default function BondWindow({ params }) {
   return (
-    <div /*  className="bondInform" */>
+    <div className="bondPage" /*  className="bondInform" */>
       <SomeInformation />
       <BondPanel />
       <div className="bondGraph">

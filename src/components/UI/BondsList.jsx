@@ -50,9 +50,9 @@ const BondsList = () => {
             count + 8
           ) /* обавить какое количество облиг выводить на странице */
           .map((bond) => (
-            <div className="bondItem">
+            <div className="bondItem" key={bond.figi}>
               <Link href={`/bonds/${bond.figi}`}>
-                <BondItem bond={bond} key={bond.figi} />
+                <BondItem bond={bond} />
               </Link>
             </div>
           ))}
