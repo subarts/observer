@@ -1,7 +1,0 @@
-{
-  "/_not-found": "app/_not-found.js",
-  "/bonds/[bond]/page": "app/bonds/[bond]/page.js",
-  "/bonds/page": "app/bonds/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/page": "app/page.js"
-}
