@@ -13,6 +13,7 @@ import { createAction, createReducer } from "@reduxjs/toolkit";
   selectSort:"sort by",
   count:0,
   numberItems:5
+
 }
 // actions
 export const addBonds=createAction("ADDBONDS")
@@ -50,28 +51,4 @@ export const selectNumbItems=createAction("SELECTNUMBITEMS")
 
 }) 
 export default reducers
-/* export default createReducer(initialState,{
-  [addBonds]: (state,action)=>{
-  
-   state.bonds=[...action.payload.bonds]
-   } , 
- [searchBonds]: (state,action)=>{
-   state.searchQuerys=action.searchQuerys 
- },
-  [selectedSort]: (state,action)=>{
-   state.selectSort=action.selectSort
-   state.bonds.sort((a,b) => {
-     return a[action.selectSort].localeCompare(b[action.selectSort])}) 
- },
- [selectNext]: (state,action)=>{
-   console.log(state.count)
-   state.count=state.count+10
- 
- },
- [selectPrev]:(state,action)=>{
- state.count=state.count-10
- console.log(state.count)
- }
 
-
-})  */

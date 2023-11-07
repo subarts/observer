@@ -12,3 +12,5 @@ export function SwitcherNumbItems(value) {
   return { type: "SELECTNUMBITEMS",numberItems: value  }
 }
 
+
+
