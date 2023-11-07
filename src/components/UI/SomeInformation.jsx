@@ -1,12 +1,15 @@
-import React from "react";
-import ButtonGetBonds from "./ButtonGetBonds";
+<<<<<<< HEAD
+import React from "react"
+=======
+import React, { useEffect, useState } from "react";
+>>>>>>> develop
 const SomeInformation = () => {
   return (
     <div className={"someInformation"}>
       <h3>Some Information</h3>
-      <ButtonGetBonds />
-      <div className={"lampConnect"}></div>
+
+      {/*    <div className={"lampConnect"}></div> */}
     </div>
-  );
-};
-export default SomeInformation;
+  )
+}
+export default SomeInformation
