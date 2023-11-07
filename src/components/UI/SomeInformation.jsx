@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import React from "react"
-=======
-import React, { useEffect, useState } from "react";
->>>>>>> develop
 const SomeInformation = () => {
   return (
     <div className={"someInformation"}>

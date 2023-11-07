@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 import React from "react"
-
-=======
-import React from "react";
->>>>>>> develop
 const BondDescript = (props) => {
   return (
     <div className={"BondDescript"}>
@@ -13,12 +8,6 @@ const BondDescript = (props) => {
         <li>ticker:{props.bond.ticker}</li>
       </ul>
     </div>
-<<<<<<< HEAD
   )
 }
 export default BondDescript
-=======
-  );
-};
-export default BondDescript;
->>>>>>> develop

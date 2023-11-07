@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 "use client"
 import React, { useEffect, useMemo } from "react"
 import { useSelector } from "react-redux"
@@ -15,26 +14,13 @@ const BondsList = () => {
   )
 
   const count = useSelector((state) => state.rootReduser.toolKit.count)
-=======
-import React, { useMemo } from "react";
-import { useSelector } from "react-redux/es/hooks/useSelector";
-import BondItem from "./BondItem";
-import { selectNext, selectPrev } from "../../store/Reducers";
-import { dispatch } from "../../store/dispatch";
-const BondsList = () => {
-  const bonds = useSelector((state) => state.rootReduser.toolKit.bonds);
-  const searchQuery = useSelector(
-    (state) => state.rootReduser.toolKit.searchQuerys
-  );
-  const count = useSelector((state) => state.rootReduser.toolKit.count);
->>>>>>> develop
+
   const sortedAndSearchBond = useMemo(() => {
     return bonds.filter(
       (bond) =>
         bond.figi.toLowerCase().includes(searchQuery) ||
         bond.ticker.toLowerCase().includes(searchQuery) ||
         bond.name.toLowerCase().includes(searchQuery)
-<<<<<<< HEAD
     )
   }, [searchQuery, bonds])
 
@@ -58,26 +44,11 @@ const BondsList = () => {
           get next bonds
         </button>
       </div>
-=======
-    );
-  }, [searchQuery, bonds]);
-
-  const counterAdd = () => {
-    dispatch(selectNext());
-  };
-  const counterDel = () => {
-    dispatch(selectPrev());
-  };
-  return (
-    <>
-      <button onClick={counterDel}>get prev bonds</button>
-      <button onClick={counterAdd}>get next bonds</button>
->>>>>>> develop
       <div className={"bondsList"}>
         {sortedAndSearchBond
           .slice(
             count,
-<<<<<<< HEAD
+
             count + 8
           ) /* обавить какое количество облиг выводить на странице */
           .map((bond) => (
@@ -92,18 +63,3 @@ const BondsList = () => {
   )
 }
 export default BondsList
-=======
-            count + 10
-          ) /* обавить какое количество облиг выводить на странице */
-          .map((bond) => (
-            <div className="bondItem">
-              <BondItem bond={bond} key={bond.figi} />
-            </div>
-          ))}
-        {console.log(count)}
-      </div>
-    </>
-  );
-};
-export default BondsList;
->>>>>>> develop
