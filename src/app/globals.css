@@ -163,4 +163,6 @@ input:focus-visible {
   display: flex;
   flex-direction: column;
 }
-
+:disabled{
+  background-color: grey;
+}

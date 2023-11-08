@@ -39,13 +39,15 @@ export const selectNumbItems=createAction("SELECTNUMBITEMS")
       })
       .addCase(selectNext,(state,action)=>{
         state.count=state.count+ state.numberItems
-      
+ 
       })
       .addCase(selectPrev,(state,action)=>{
       state.count=state.count- state.numberItems
+  
        })
        .addCase(selectNumbItems,(state,action)=>{
         state.numberItems=action.numberItems
+        
          })
   
 
