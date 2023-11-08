@@ -4,7 +4,7 @@ import { dispatch } from "../../store/dispatch"
 import { selectNext, selectPrev } from "../../store/Reducers"
 const SwitcherPage = (props) => {
   const count = useSelector((state) => state.rootReduser.toolKit.count)
-  let pageCount = count
+  let pageCount = count / 5
   const counterAdd = () => {
     dispatch(selectNext())
   }
@@ -23,8 +23,8 @@ const SwitcherPage = (props) => {
           get prev bonds
         </button>
       )}
-      Page: {pageCount / 5 + 1}/{Math.ceil(bonds.props.length / 5)}
-      {pageCount >= bonds.props.length ? (
+      Page: {pageCount + 1}/{Math.ceil(bonds.props.length / 5)}
+      {pageCount >= Math.ceil(bonds.props.length / 5 - 1) ? (
         <button onClick={counterAdd} className="ButtonList" disabled>
           get next bonds
         </button>

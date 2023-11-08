@@ -1,6 +1,5 @@
 "use client"
 import Link from "next/link";
-import { useSelector } from "react-redux/es/hooks/useSelector";
 export default function home() {
 
   return (
