@@ -3,15 +3,15 @@ import React, { useMemo } from "react"
 import { useSelector } from "react-redux"
 import BondItem from "./BondItem"
 import Link from "next/link"
-import SwitcherPage from "./SwitcherPage"
+import SwitcherPage from "./SwitchPage"
 const BondsList = () => {
   const bonds = useSelector((state) => state.rootReduser.toolKit.bonds)
 
   const searchQuery = useSelector(
     (state) => state.rootReduser.toolKit.searchQuerys
   )
-
   const count = useSelector((state) => state.rootReduser.toolKit.count)
+
   const sortedAndSearchBond = useMemo(() => {
     return bonds.filter(
       (bond) =>
@@ -23,21 +23,16 @@ const BondsList = () => {
 
   return (
     <>
-      <SwitcherPage props={sortedAndSearchBond} />
+      <SwitcherPage props={sortedAndSearchBond.length} />
 
       <div className={"bondsList"}>
-        {sortedAndSearchBond
-          .slice(
-            count,
-            count + 8
-          ) /* обавить какое количество облиг выводить на странице */
-          .map((bond) => (
-            <div className="bondItem" key={bond.figi}>
-              <Link href={`/bonds/${bond.figi}`}>
-                <BondItem bond={bond} />
-              </Link>
-            </div>
-          ))}
+        {sortedAndSearchBond.slice(count, count + 10).map((bond) => (
+          <div className="bondItem" key={bond.figi}>
+            <Link href={`/bonds/${bond.figi}`}>
+              <BondItem bond={bond} />
+            </Link>
+          </div>
+        ))}
       </div>
     </>
   )

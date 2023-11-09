@@ -12,8 +12,7 @@ import { createAction, createReducer } from "@reduxjs/toolkit";
   searchQuerys:"",
   selectSort:"sort by",
   count:0,
-  numberItems:5
-
+  numberItems:10 //кривая реализация количества облигаций на странице
 }
 // actions
 export const addBonds=createAction("ADDBONDS")
@@ -21,7 +20,6 @@ export const searchBonds=createAction("SEARCHBONDS")
 export const selectedSort=createAction("SELECTEDSORT")
 export const selectNext=createAction("SELECTVIEWLIST")
 export const selectPrev=createAction("SELECTPREV")
-export const selectNumbItems=createAction("SELECTNUMBITEMS")
 
 // reducers
  const reducers = createReducer(initialState,(builder)=>{
@@ -37,18 +35,16 @@ export const selectNumbItems=createAction("SELECTNUMBITEMS")
         state.bonds.sort((a,b) => {
           return a[action.selectSort].localeCompare(b[action.selectSort])}) 
       })
-      .addCase(selectNext,(state,action)=>{
-        state.count=state.count+ state.numberItems
+      .addCase(selectNext,(state)=>{
+        state.count=state.count+state.numberItems
  
       })
-      .addCase(selectPrev,(state,action)=>{
+      .addCase(selectPrev,(state)=>{
       state.count=state.count- state.numberItems
   
        })
-       .addCase(selectNumbItems,(state,action)=>{
-        state.numberItems=action.numberItems
-        
-         })
+      
+       
   
 
 }) 

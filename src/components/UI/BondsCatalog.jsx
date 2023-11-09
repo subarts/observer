@@ -25,7 +25,6 @@ const BondsCatalog = () => {
       <button onClick={bondsRequest} className="ButtonBonds">
         get bonds
       </button>
-
       <SearchBond />
       <SelectSort />
       <BondsList />

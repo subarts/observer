@@ -43,13 +43,22 @@ body {
   width: 79em;
   gap: 2em;
 }
-.BondDescript{
+.bondDescript{
   width:  100%; 
   display: flex;
-
     align-items: center;
     flex-direction: column;
+    border-radius: 20px;
+    background-color: darkseagreen;
+    transition: 3s;
+    box-sizing: border-box;
+    padding: 2rem;
+    height: max-content;
+    
  
+}
+.bondItem{
+  height: fit-content;
 }
 .bondsList{
   display: flex;
@@ -83,14 +92,14 @@ border-radius: 50%;
 background-color: red;
 
 }
-.bondItem{
+/* .bondItem{
   border-radius: 20px;
   background-color: darkseagreen;
   transition: 3s;
   box-sizing: border-box;
   padding: 2rem;
   height: max-content;
-}
+} */
 .ButtonBonds{
   height: 2rem;
   width: 7rem;
@@ -103,7 +112,7 @@ background-color: red;
   transition: 3s;
 
 }
-.bondItem:hover{
+.bondDescript:hover{
   background-color: grey;
   transition: 3s;
 }

@@ -1,7 +1,7 @@
 import React from "react"
 const BondDescript = (props) => {
   return (
-    <div className={"BondDescript"}>
+    <div className={"bondDescript"}>
       <h1>{props.bond.name}</h1>
       <ul>
         <li>figi:{props.bond.figi}</li>
