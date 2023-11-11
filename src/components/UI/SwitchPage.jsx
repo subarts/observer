@@ -1,6 +1,6 @@
 import React from "react"
 import { useSelector } from "react-redux/es/hooks/useSelector"
-import { dispatch } from "../../store/dispatch"
+import { dispatch } from "./Dispatch"
 import { selectNext, selectPrev } from "../../store/Reducers"
 const SwitcherPage = (props) => {
   const count = useSelector((state) => state.rootReduser.toolKit.count)

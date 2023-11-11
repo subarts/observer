@@ -1,5 +1,5 @@
 import { Inter } from "next/font/google"
-import { Providers } from "../store/Providers"
+import { Providers } from "../components/UI/Providers"
 
 import "./globals.css"
 import React from "react"

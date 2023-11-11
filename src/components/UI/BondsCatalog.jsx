@@ -2,7 +2,7 @@
 import React from "react"
 import SearchBond from "./SearchBond"
 import SelectSort from "./SelectSort"
-import { dispatch } from "../../store/dispatch"
+import { dispatch } from "./Dispatch"
 import BondsList from "./BondsList"
 import GetBonds from "../../API/RestRequestBonds"
 import { bondsAdd } from "../../store/actionCreators"
