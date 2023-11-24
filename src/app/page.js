@@ -3,8 +3,8 @@ import Link from "next/link";
 export default function home() {
 
   return (
-   <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Link href={"./bonds"}><button>onclick</button></Link>
+   <main className="flex min-h-screen items-center justify-between ">
+      <Link href={"./bonds"}><button>Bonds</button></Link>
      
     </main>
   )

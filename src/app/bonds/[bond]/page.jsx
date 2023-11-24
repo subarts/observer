@@ -1,14 +1,13 @@
-import React from "react"
-import SomeInformation from "../../../components/UI/SomeInformation"
-import Image from "next/image"
-import BondPanel from "../../../components/UI/BondPanel"
+import React from "react";
+import SomeInformation from "../../../components/UI/SomeInformation";
+import Image from "next/image";
+import BondPanel from "../../../components/UI/BondPanel";
 /* import BondDescript from "../../components/UI/BondItem" */
-import { useSelector } from "react-redux/es/hooks/useSelector"
-import AboutBond from "../../../components/UI/AboutBond"
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import AboutBond from "../../../components/UI/AboutBond";
 export default function BondWindow({ params }) {
   return (
     <div className="bondPage" /*  className="bondInform" */>
-      <SomeInformation />
       <BondPanel />
       <div className="bondGraph">
         <AboutBond {...params} />
@@ -21,5 +20,5 @@ export default function BondWindow({ params }) {
         />
       </div>
     </div>
-  )
+  );
 }
